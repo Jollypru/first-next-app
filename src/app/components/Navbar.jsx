@@ -1,13 +1,13 @@
 
+import { useKindeAuth } from '@kinde-oss/kinde-auth-nextjs';
 import { LoginLink, LogoutLink, RegisterLink } from '@kinde-oss/kinde-auth-nextjs/components';
-import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+// import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import Link from 'next/link';
-import React from 'react';
 
-const Navbar = async() => {
-    const { isAuthenticated, getUser  } = getKindeServerSession();
-    const isUserAuthenticated = await isAuthenticated();
-    const user =await getUser();
+const Navbar = () => {
+    const { isAuthenticated, getUser  } = useKindeAuth();
+    // const isUserAuthenticated = await isAuthenticated();
+    const user = getUser();
     console.log(user);
 
     return (

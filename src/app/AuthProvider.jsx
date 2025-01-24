@@ -6,7 +6,7 @@ export const AuthProvider = ({ children }) => {
         <KindeProvider
             kindeDomain={process.env.KINDE_ISSUER_URL}
             clientId={process.env.KINDE_CLIENT_ID}
-            redirectUri={`${process.env.NEXT_PUBLIC_URL}/api/auth/callback`}
+            redirectUri={`${process.env.NEXT_PUBLIC_URL}/api/auth/kinde_callback`}
         >{children}</KindeProvider>
     )
 }

@@ -11,19 +11,20 @@ const Navbar = async() => {
     console.log(user);
 
     return (
-        <div className='bg-slate-200 p-4 px-8'>
+        <div className='bg-slate-200 p-4 md:px-8'>
             <nav className='container mx-auto flex justify-between items-center'>
-                <h1 className='text-2xl'>MockNext</h1>
+                <h1 className='text-2xl font-semibold'>MockNext</h1>
+
                 <div>
-                    <ul className='flex gap-5'>
+                    <ul className='flex gap-3 md:gap-5 text-xl'>
                         <li className='hover:underline'><Link href='/'>Home</Link></li>
                         <li className='hover:underline'><Link href='/profile' >Profile</Link></li>
                     </ul>
                 </div>
                 {
                     isUserAuthenticated ?
-                        <div className='flex items-center gap-8'>
-                            <span>Welcome, {user?.given_name || 'User'}</span>
+                        <div className='flex items-center md:gap-8'>
+                            <span className='hidden md:flex md:text-xl'>Welcome, {user?.given_name || 'User'}</span>
                            <button className='btn bg-sky-600 py-1 px-3 text-white'> <LogoutLink>Logout</LogoutLink></button>
                         </div> :
                         <div>

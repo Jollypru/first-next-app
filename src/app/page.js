@@ -9,7 +9,7 @@ export default function Home() {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(res => res.json())
       .then(data => {
-        setPosts(data)
+        setPosts(data);
       })
   }, [])
   return (
